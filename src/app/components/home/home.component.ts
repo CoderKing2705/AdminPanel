@@ -1,8 +1,8 @@
 import { HttpEventType } from '@angular/common/http';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, NgZone, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { UploadServiceService } from '../../services/upload/upload-service.service';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { IndustryService } from '../../services/industry/industry.service';
@@ -18,6 +18,8 @@ import { PaymentInfoService } from '../../services/paymentInfo/payment-info.serv
 import { SourceService } from '../../services/source/source.service';
 import { StripeCardComponent, StripeService } from 'ngx-stripe';
 import { StripeCardElementOptions, StripeElementsOptions, } from '@stripe/stripe-js';
+
+import { GoogleMapsService } from '../../services/googleMaps/google-maps.service';
 
 export interface BusinessLocationList {
   legalName: string;
@@ -191,17 +193,22 @@ export class HomeComponent {
   elementsOptions: StripeElementsOptions = {
     locale: 'en'
   };
+  suggestions: any[] = [];
+  predictions: google.maps.places.AutocompletePrediction[] = [];
   @ViewChild(StripeCardComponent) card: StripeCardComponent;
   @ViewChild('closeModal') closeModal: ElementRef;
   filteredataForLocations: any = [];
   filterDataForPaymentInfo: any = [];
   filterDataForSources: any = [];
 
+  @ViewChild('search') searchElementRef: ElementRef;
+
   constructor(private aroute: ActivatedRoute, private route: Router, private fb: FormBuilder, private _uploadService: UploadServiceService,
     private _industryService: IndustryService, private _packageService: PackageTypeService, private _groupService: GroupListService,
     private _stateService: StateService, private _businessProfileService: BusinessProfilesService, private toast: ToastrService,
     private _businessLabelService: BusinessLabelService, private _paymentInfoService: PaymentInfoService,
-    private _sourceService: SourceService, private stripeService: StripeService) {
+    private _sourceService: SourceService, private stripeService: StripeService, private googleMapsService: GoogleMapsService,
+    private ngZone: NgZone) {
 
     this.paymentInfoID = 0;
     this.businessLocationID = 0;
@@ -275,10 +282,21 @@ export class HomeComponent {
       StoreTabletBrand: ['', Validators.required],
       StoreTabletModel: ['', Validators.required],
     });
+  }
 
-    // this.dataSourceBusinessLocation = this.filteredataForLocations;
-    // this.dataSourcePaymentInfo = this.filterDataForPaymentInfo;
-    // this.dataSourceSources = this.filterDataForSources;
+  initAutocomplete() {
+    this.googleMapsService.api.then((maps) => {
+      let autocomplete = new maps.places.Autocomplete(
+        this.searchElementRef.nativeElement
+      );
+      autocomplete.addListener('place_changed', () => {
+        this.ngZone.run(() => {
+          this.latitude = autocomplete.getPlace().geometry.location.lat();
+          this.longitude = autocomplete.getPlace().geometry.location.lng();
+          this.secondFormGroup.controls['Address'].setValue(this.searchElementRef.nativeElement.value);
+        });
+      });
+    });
   }
 
   ngOnInit() {

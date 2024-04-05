@@ -4,13 +4,15 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { GroupListComponent } from './components/group-list/group-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PageNotFountComponent } from './components/page-not-found/page-not-fount.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canDeactivate:[(component:HomeComponent) => !component.Cancel] },
   { path: 'group-list', component: GroupListComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'navbar', component: NavbarComponent }
+  { path: 'navbar', component: NavbarComponent },
+  { path: '**', component: PageNotFountComponent }
 ];
 
 @NgModule({

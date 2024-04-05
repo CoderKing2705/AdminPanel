@@ -447,9 +447,11 @@
                                 <label for="address">
                                     Address
                                 </label>
-                                <textarea id="address" class="form-control" formControlName="Address" autocomplete="off"
-                                    [ngClass]="{ 'is-invalid': secondStepSubmitted && secondFormGroup.controls['Address'].errors }">
-                                </textarea>
+                                <input #search id="address" type="text" class="form-control" formControlName="Address"
+                                    autocomplete="off" spellcheck="off" autocapitalize="off" autocorrect="off"
+                                    [ngClass]="{ 'is-invalid': secondStepSubmitted && secondFormGroup.controls['Address'].errors }"
+                                    placeholder="search for location" (input)="initAutocomplete()" />
+
                                 <div *ngIf="secondStepSubmitted && secondFormGroup.controls['Address'].errors"
                                     class="invalid-feedback">
                                     <div *ngIf="secondFormGroup.controls['Address'].errors['required']">
@@ -457,7 +459,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-md-4">
                                 <label for="city">
                                     City

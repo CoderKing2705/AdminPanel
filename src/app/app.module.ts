@@ -24,6 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaskModule } from 'ngx-mask';
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { NgxStripeModule } from 'ngx-stripe';
+import { PageNotFountComponent } from './components/page-not-found/page-not-fount.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { NgxStripeModule } from 'ngx-stripe';
     HomeComponent,
     GroupListComponent,
     NavbarComponent,
+    PageNotFountComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,8 @@ import { NgxStripeModule } from 'ngx-stripe';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgxMaskModule.forRoot(),
-    NgxStripeModule.forRoot('pk_test_51OtUU9ANXWzVIo6gmFhQjk1ZoUafmmnbUdZb2vJZosTBBwK8JWbsB3kEMPSAzIEAjpGxpb6YUiC1AtyfpPpxesBe00ASEDLBCy')
+    NgxStripeModule.forRoot('pk_test_51OtUU9ANXWzVIo6gmFhQjk1ZoUafmmnbUdZb2vJZosTBBwK8JWbsB3kEMPSAzIEAjpGxpb6YUiC1AtyfpPpxesBe00ASEDLBCy'),
+    GoogleMapsModule,
   ],
   providers: [
     provideAnimationsAsync(),
