@@ -8,7 +8,7 @@ import { PageNotFountComponent } from './components/page-not-found/page-not-foun
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'login', component: LoginComponent, canDeactivate:[(component:HomeComponent) => !component.Cancel] },
+  { path: 'login', component: LoginComponent },
   { path: 'group-list', component: GroupListComponent },
   { path: 'home', component: HomeComponent },
   { path: 'navbar', component: NavbarComponent },
