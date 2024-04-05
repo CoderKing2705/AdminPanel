@@ -1634,4 +1634,8 @@ export class HomeComponent {
       });
     });
   }
+
+  navigateToList(){
+    this.route.navigate(['/group-list']);
+  }
 }
