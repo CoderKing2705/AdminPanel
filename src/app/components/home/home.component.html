@@ -450,7 +450,7 @@
                                 <input #search id="address" type="text" class="form-control" formControlName="Address"
                                     autocomplete="off" spellcheck="off" autocapitalize="off" autocorrect="off"
                                     [ngClass]="{ 'is-invalid': secondStepSubmitted && secondFormGroup.controls['Address'].errors }"
-                                    placeholder="search for location" (input)="initAutocomplete()" />
+                                    placeholder="Search location" (input)="initAutocomplete()" />
 
                                 <div *ngIf="secondStepSubmitted && secondFormGroup.controls['Address'].errors"
                                     class="invalid-feedback">

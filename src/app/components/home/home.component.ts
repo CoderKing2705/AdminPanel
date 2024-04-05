@@ -18,7 +18,6 @@ import { PaymentInfoService } from '../../services/paymentInfo/payment-info.serv
 import { SourceService } from '../../services/source/source.service';
 import { StripeCardComponent, StripeService } from 'ngx-stripe';
 import { StripeCardElementOptions, StripeElementsOptions, } from '@stripe/stripe-js';
-
 import { GoogleMapsService } from '../../services/googleMaps/google-maps.service';
 
 export interface BusinessLocationList {
@@ -193,15 +192,15 @@ export class HomeComponent {
   elementsOptions: StripeElementsOptions = {
     locale: 'en'
   };
-  suggestions: any[] = [];
-  predictions: google.maps.places.AutocompletePrediction[] = [];
+
   @ViewChild(StripeCardComponent) card: StripeCardComponent;
   @ViewChild('closeModal') closeModal: ElementRef;
+  @ViewChild('search') searchElementRef: ElementRef;
+
   filteredataForLocations: any = [];
   filterDataForPaymentInfo: any = [];
   filterDataForSources: any = [];
 
-  @ViewChild('search') searchElementRef: ElementRef;
 
   constructor(private aroute: ActivatedRoute, private route: Router, private fb: FormBuilder, private _uploadService: UploadServiceService,
     private _industryService: IndustryService, private _packageService: PackageTypeService, private _groupService: GroupListService,
@@ -283,22 +282,6 @@ export class HomeComponent {
       StoreTabletModel: ['', Validators.required],
     });
   }
-
-  initAutocomplete() {
-    this.googleMapsService.api.then((maps) => {
-      let autocomplete = new maps.places.Autocomplete(
-        this.searchElementRef.nativeElement
-      );
-      autocomplete.addListener('place_changed', () => {
-        this.ngZone.run(() => {
-          this.latitude = autocomplete.getPlace().geometry.location.lat();
-          this.longitude = autocomplete.getPlace().geometry.location.lng();
-          this.secondFormGroup.controls['Address'].setValue(this.searchElementRef.nativeElement.value);
-        });
-      });
-    });
-  }
-
   ngOnInit() {
     this.aroute.params.subscribe((params: Params) => {
       this.businessGroupID = params['id']
@@ -1041,15 +1024,7 @@ export class HomeComponent {
     this.thirdStepSubmitted = true;
     this.isLoading = true;
 
-    const name = this.thirdFormGroup.get('CardHolderName').value;
-    // this.stripeService.createToken(this.card.element, { name }).subscribe((result) => {
-    //   if (result.token) {
-    //     console.log(result.token.id);
-    //   } else if (result.error) {
-    //     this.isLoading = false;
-    //     console.log(result.error.message);
-    //   }
-    // });
+    this.thirdFormGroup.get('CardHolderName').value;
     let paymentID: any = '';
     let expiryMonth: any = 0;
     let expiryYear: any = 0;
@@ -1641,6 +1616,22 @@ export class HomeComponent {
     const searchInput = event.target.value.toLowerCase();
     this.dataSourceSources = this.filterDataForSources.filter((item: any) => {
       return item.businessLocationName.toLowerCase().includes(searchInput)
+    });
+  }
+
+  // search Google Maps....
+  initAutocomplete() {
+    this.googleMapsService.api.then((maps) => {
+      let autocomplete = new maps.places.Autocomplete(
+        this.searchElementRef.nativeElement
+      );
+      autocomplete.addListener('place_changed', () => {
+        this.ngZone.run(() => {
+          this.latitude = autocomplete.getPlace().geometry.location.lat();
+          this.longitude = autocomplete.getPlace().geometry.location.lng();
+          this.secondFormGroup.controls['Address'].setValue(this.searchElementRef.nativeElement.value);
+        });
+      });
     });
   }
 }
