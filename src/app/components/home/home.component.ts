@@ -1627,15 +1627,22 @@ export class HomeComponent {
       );
       autocomplete.addListener('place_changed', () => {
         this.ngZone.run(() => {
+
           this.latitude = autocomplete.getPlace().geometry.location.lat();
           this.longitude = autocomplete.getPlace().geometry.location.lng();
           this.secondFormGroup.controls['Address'].setValue(this.searchElementRef.nativeElement.value);
         });
       });
+
+      this.searchElementRef.nativeElement.addEventListener('keydown', (event: any) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+        }
+      })
     });
   }
 
-  navigateToList(){
+  navigateToList() {
     this.route.navigate(['/group-list']);
   }
 }
