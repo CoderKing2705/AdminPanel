@@ -345,14 +345,6 @@ export class HomeComponent {
       textField: 'name',
       singleSelection: true
     }
-
-    // const data = this.paymentDocFromGroup.controls['paymentDocs'] as FormArray;
-    // docs.forEach(element => {
-    //   data.push(this.fb.group({
-    //     type: new FormControl(),
-    //     fileName: new FormControl()
-    //   })
-    // });
   }
 
   getIndustries() {

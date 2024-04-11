@@ -1827,9 +1827,12 @@
                                                         </label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label>
+                                                        <label style="display:inline-block">
                                                             <b>Business Labels</b>:
-                                                            <!-- {{this.secondFormGroup.controls['BusinessLabelID'].value[0].name}} -->
+                                                            <div style="display:inline-block"
+                                                                *ngFor="let label of selectedBusinessLabels">
+                                                                {{label.name}} ,
+                                                            </div>
                                                         </label>
                                                     </div>
                                                     <div class="col-md-6">
