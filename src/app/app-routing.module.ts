@@ -4,15 +4,21 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { GroupListComponent } from './components/group-list/group-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { PageNotFountComponent } from './components/page-not-found/page-not-fount.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
+import { InvoiceListComponent } from './components/invoice-list/invoice-list.component';
+import { PaymentsComponent } from './components/payments/payments.component';
+import { PaymentListComponent } from './components/payment-list/payment-list.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'group-list', component: GroupListComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'navbar', component: NavbarComponent },
-  { path: '**', component: PageNotFountComponent }
+  { path: 'invoice', component: InvoiceComponent },
+  { path: 'invoice-list', component: InvoiceListComponent },
+  { path: 'payment', component: PaymentsComponent },
+  { path: 'payment-list', component: PaymentListComponent },
+  { path: 'navbar', component: NavbarComponent }
 ];
 
 @NgModule({
