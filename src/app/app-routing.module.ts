@@ -8,16 +8,17 @@ import { InvoiceComponent } from './components/invoice/invoice.component';
 import { InvoiceListComponent } from './components/invoice-list/invoice-list.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { PaymentListComponent } from './components/payment-list/payment-list.component';
+import { authGuardGuard } from './services/authGuard/auth-guard.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'group-list', component: GroupListComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'invoice', component: InvoiceComponent },
-  { path: 'invoice-list', component: InvoiceListComponent },
-  { path: 'payment', component: PaymentsComponent },
-  { path: 'payment-list', component: PaymentListComponent },
+  { path: 'group-list', component: GroupListComponent, canActivate: [authGuardGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [authGuardGuard] },
+  { path: 'invoice', component: InvoiceComponent, canActivate: [authGuardGuard] },
+  { path: 'invoice-list', component: InvoiceListComponent, canActivate: [authGuardGuard] },
+  { path: 'payment', component: PaymentsComponent, canActivate: [authGuardGuard] },
+  { path: 'payment-list', component: PaymentListComponent, canActivate: [authGuardGuard] },
   { path: 'navbar', component: NavbarComponent }
 ];
 

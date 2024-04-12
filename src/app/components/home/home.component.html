@@ -1827,12 +1827,9 @@
                                                         </label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label style="display:inline-block">
+                                                        <label>
                                                             <b>Business Labels</b>:
-                                                            <div style="display:inline-block"
-                                                                *ngFor="let label of selectedBusinessLabels">
-                                                                {{label.name}} ,
-                                                            </div>
+                                                            <!-- {{this.secondFormGroup.controls['BusinessLabelID'].value[0].name}} -->
                                                         </label>
                                                     </div>
                                                     <div class="col-md-6">
@@ -2338,19 +2335,19 @@
                                         <div class="row" style="margin-bottom: 1%;">
                                             <h4> Customer Tablet </h4>
                                             <label>
-                                                Tablet Brand : {{fourthFormGroup.controls['CustTabletBrand'].value}}
+                                                Tablet Brand
                                             </label>
                                             <label>
-                                                Tablet Model : {{fourthFormGroup.controls['CustTabletModel'].value}}
+                                                Tablet Model
                                             </label>
                                         </div>
                                         <div class="row" style="margin-bottom: 1%;">
                                             <h4> Store Tablet </h4>
                                             <label>
-                                                Tablet Brand : {{fourthFormGroup.controls['StoreTabletBrand'].value}}
+                                                Tablet Brand
                                             </label>
                                             <label>
-                                                Tablet Model : {{fourthFormGroup.controls['StoreTabletModel'].value}}
+                                                Tablet Model
                                             </label>
                                         </div>
                                     </div>
