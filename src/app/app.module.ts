@@ -39,7 +39,6 @@ import { GoogleMapsModule } from '@angular/google-maps';
     PaymentsComponent,
     PaymentListComponent,
     InvoiceListComponent,
-    
   ],
   imports: [
     BrowserModule,
