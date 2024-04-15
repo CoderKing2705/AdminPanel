@@ -9,7 +9,8 @@ export class AppComponent {
   title = 'Panel';
   @HostListener('window:beforeunload', ['$event'])
   beforeUnloadHandler(event: Event) {
-    // Clear local storage when the tab is closed
-    localStorage.clear();
+    if (event.currentTarget) {
+      localStorage.clear();
+    }
   }
 }

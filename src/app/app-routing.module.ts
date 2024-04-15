@@ -8,7 +8,7 @@ import { InvoiceComponent } from './components/invoice/invoice.component';
 import { InvoiceListComponent } from './components/invoice-list/invoice-list.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { PaymentListComponent } from './components/payment-list/payment-list.component';
-import { authGuardGuard } from './services/authGuard/auth-guard.guard';
+import { authGuardGuard } from './services/guard/auth-guard.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
