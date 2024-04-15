@@ -23,6 +23,7 @@
 
     <div class="col-lg-12">
         <mat-stepper [linear]="isLinear" #stepper>
+
             <mat-step [stepControl]="firstFormGroup">
                 <form [formGroup]="firstFormGroup">
                     <div class="wrapper" style="background: white;border-radius: 15px;">
@@ -265,6 +266,7 @@
                     </div>
                 </form>
             </mat-step>
+
             <mat-step [stepControl]="secondFormGroup" label="Locations">
                 <div class="row mt-1 mb-1" *ngIf="showLocationList">
                     <div class="col-md-12 p-0 d-flex">
@@ -999,6 +1001,7 @@
                     </div>
                 </form>
             </mat-step>
+
             <mat-step [stepControl]="thirdFormGroup" label="Payment Info">
                 <div class="row mt-1 mb-1" *ngIf="showPaymentList">
                     <div class="col-md-12 p-0 d-flex">
@@ -1298,6 +1301,7 @@
                     </div>
                 </form>
             </mat-step>
+
             <mat-step label="Payment Docs">
                 <div class="row mt-1 mb-1">
                     <div class="col-md-12 p-0 d-flex">
@@ -1414,6 +1418,7 @@
                     </div>
                 </div>
             </mat-step>
+
             <mat-step [stepControl]="fourthFormGroup" label="Sources">
                 <div class="row mt-1 mb-1" *ngIf="showSourceList">
                     <div class="col-md-12 p-0 d-flex">
@@ -1618,6 +1623,7 @@
                     </div>
                 </form>
             </mat-step>
+
             <mat-step label="Summary">
                 <div class="wrapper" style="background: white;border-radius: 15px;">
                     <h4>
@@ -1628,9 +1634,11 @@
                     <div class="col-md-12 d-flex">
                         <div class="col-md-4">
                             <div class="row">
-                                <div class="col-md-4" style="font-weight: 400;"><label>
+                                <div class="col-md-4">
+                                    <label style="font-weight: 500;">
                                         Business Group:
-                                    </label></div>
+                                    </label>
+                                </div>
                                 <div class="col-md-8">
                                     {{firstFormGroup.controls['BusinessgroupName'].value}}
                                 </div>
@@ -1639,8 +1647,8 @@
                         <div class="col-md-4">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label>
-                                        <b>Industry Type :</b>
+                                    <label style="font-weight: 500;">
+                                        Industry Type :
                                     </label>
                                 </div>
                                 <div class="col-md-8">
@@ -1651,8 +1659,8 @@
                         <div class="col-md-4">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label>
-                                        <b>Package Type :</b>
+                                    <label style="font-weight: 500;">
+                                        Package Type :
                                     </label>
                                 </div>
                                 <div class="col-md-8">
@@ -1667,8 +1675,8 @@
                         <div class="col-md-4">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label>
-                                        <b>SMS Profile:</b>
+                                    <label style="font-weight: 500;">
+                                        SMS Profile:
                                     </label>
                                 </div>
                                 <div class="col-md-8">
@@ -1679,9 +1687,11 @@
                         </div>
                         <div class="col-md-4">
                             <div class="row">
-                                <div class="col-md-4"><label>
-                                        <b>SMS Phone :</b>
-                                    </label></div>
+                                <div class="col-md-4">
+                                    <label style="font-weight: 500;">
+                                        SMS Phone:
+                                    </label>
+                                </div>
                                 <div class="col-md-8">
                                     {{firstFormGroup.controls['SMSPhoneNumber'].value}}
                                 </div>
@@ -1690,8 +1700,8 @@
                         <div class="col-md-4">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label>
-                                        <b>Spin Wheel :</b>
+                                    <label style="font-weight: 500;">
+                                        Spin Wheel :
                                     </label>
                                 </div>
                                 <div class="col-md-8">
@@ -1704,9 +1714,11 @@
                     <div class="col-md-12 d-flex">
                         <div class="col-md-4">
                             <div class="row">
-                                <div class="col-md-4"><label>
-                                        <b>Sign In / Sign Out Required? :</b>
-                                    </label></div>
+                                <div class="col-md-4">
+                                    <label style="font-weight: 500;">
+                                        Sign In / Sign Out Required? :
+                                    </label>
+                                </div>
                                 <div class="col-md-8">
                                     {{firstFormGroup.controls['SignoutRequired'].value == true ? "Yes" : "No"}}
                                 </div>
@@ -1715,8 +1727,8 @@
                         <div class="col-md-4">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label>
-                                        <b>Auto Signout Hours :</b>
+                                    <label style="font-weight: 500;">
+                                        Auto Signout Hours :
                                     </label>
                                 </div>
                                 <div class="col-md-8">
@@ -1727,8 +1739,8 @@
                         <div class="col-md-4">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label>
-                                        <b> Daily Closure Time: </b>
+                                    <label style="font-weight: 500;">
+                                        Daily Closure Time:
                                     </label>
                                 </div>
                                 <div class="col-md-8">
@@ -1741,9 +1753,11 @@
                     <div class="col-md-12 d-flex">
                         <div class="col-md-4">
                             <div class="row">
-                                <div class="col-md-4"><label>
-                                        <b>Admin Email:</b>
-                                    </label></div>
+                                <div class="col-md-4">
+                                    <label style="font-weight: 500;">
+                                        Admin Email:
+                                    </label>
+                                </div>
                                 <div class="col-md-8">
                                     {{firstFormGroup.controls['EmailID'].value}}
                                 </div>
@@ -1752,8 +1766,8 @@
                         <div class="col-md-4">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label>
-                                        <b>Admin Phone Number:</b>
+                                    <label style="font-weight: 500;">
+                                        Admin Phone Number:
                                     </label>
                                 </div>
                                 <div class="col-md-8">
@@ -1764,8 +1778,8 @@
                         <div class="col-md-4">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label>
-                                        <b> Admin Full Name: </b>
+                                    <label style="font-weight: 500;">
+                                        Admin Full Name:
                                     </label>
                                 </div>
                                 <div class="col-md-8">
@@ -1794,55 +1808,58 @@
                                             <div class="col=md-12 d-flex">
                                                 <div class="row d-flex">
                                                     <div class="col-md-6">
-                                                        <label>
-                                                            <b>Legal Name</b>:
-                                                            {{this.secondFormGroup.controls['BusinessLocationName'].value}}
+                                                        <label style="font-weight: 500;">
+                                                            Legal Name:
                                                         </label>
+                                                        {{this.secondFormGroup.controls['BusinessLocationName'].value}}
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label>
-                                                            <b>Display Name</b>:
-                                                            {{this.secondFormGroup.controls['BusinessShortName'].value}}
+                                                        <label style="font-weight: 500;">
+                                                            Display Name:
                                                         </label>
+                                                        {{this.secondFormGroup.controls['BusinessShortName'].value}}
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label>
-                                                            <b>State</b>:
-                                                            {{secondFormGroup.controls['StateID'].value.length !=
-                                                            0 ?
-                                                            secondFormGroup.controls['StateID'].value[0].name :
-                                                            ''}}
+                                                        <label style="font-weight: 500;">
+                                                            State:
                                                         </label>
+                                                        {{secondFormGroup.controls['StateID'].value.length !=
+                                                        0 ?
+                                                        secondFormGroup.controls['StateID'].value[0].name :
+                                                        ''}}
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label>
-                                                            <b>Zip Code</b>:
-                                                            {{this.secondFormGroup.controls['Pincode'].value}}
+                                                        <label style="font-weight: 500;">
+                                                            Zip Code:
                                                         </label>
+                                                        {{this.secondFormGroup.controls['Pincode'].value}}
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label>
-                                                            <b>Phone Number</b>:
-                                                            {{this.secondFormGroup.controls['PhoneNo'].value}}
+                                                        <label style="font-weight: 500;">
+                                                            Phone Number:
                                                         </label>
+                                                        {{this.secondFormGroup.controls['PhoneNo'].value}}
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label>
-                                                            <b>Business Labels</b>:
-                                                            <!-- {{this.secondFormGroup.controls['BusinessLabelID'].value[0].name}} -->
+                                                        <label style="font-weight: 500;display:inline-block">
+                                                            Business Labels:
                                                         </label>
+                                                        <div style="display:inline-block;margin-left:4px"
+                                                            *ngFor="let label of selectedBusinessLabels">
+                                                            {{label.name}} ,
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label>
-                                                            <b>Address</b>:
-                                                            {{this.secondFormGroup.controls['Address'].value}}
+                                                        <label style="font-weight: 500;">
+                                                            Address:
                                                         </label>
+                                                        {{this.secondFormGroup.controls['Address'].value}}
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label>
-                                                            <b>Description</b>:
-                                                            {{this.secondFormGroup.controls['Description'].value}}
+                                                        <label style="font-weight: 500;">
+                                                            Description:
                                                         </label>
+                                                        {{this.secondFormGroup.controls['Description'].value}}
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 pr-0">
@@ -1851,8 +1868,9 @@
                                                             <!-- <div class="row"> -->
                                                             <div class="col-md-12 d-flex">
                                                                 <div class="col-md-10">
-                                                                    <label for="hours" style="margin-left: 20%;">
-                                                                        <b>Business Working Hours</b>
+                                                                    <label for="hours"
+                                                                        style="margin-left: 20%;font-weight: 500;">
+                                                                        Business Working Hours
                                                                     </label>
                                                                 </div>
                                                                 <div class="col-md-2 pr-0">
@@ -1873,10 +1891,8 @@
                                                                         <div class="col-md-12 d-flex"
                                                                             style="margin-left: 20%;">
                                                                             <div class="col-md-1 p-0">
-                                                                                <label>
-                                                                                    <b>
-                                                                                        Mon:
-                                                                                    </b>
+                                                                                <label style="font-weight: 500;">
+                                                                                    Mon:
                                                                                 </label>
                                                                             </div>
                                                                             <div class="col-md-2 p-0">
@@ -1902,10 +1918,8 @@
                                                                         <div class="col-md-12 d-flex"
                                                                             style="margin-left: 20%;">
                                                                             <div class="col-md-1 p-0">
-                                                                                <label>
-                                                                                    <b>
-                                                                                        Tue:
-                                                                                    </b>
+                                                                                <label style="font-weight: 500;">
+                                                                                    Tue:
                                                                                 </label>
                                                                             </div>
                                                                             <div class="col-md-2 p-0">
@@ -1927,10 +1941,8 @@
                                                                         <div class="col-md-12 d-flex"
                                                                             style="margin-left: 20%;">
                                                                             <div class="col-md-1 p-0">
-                                                                                <label>
-                                                                                    <b>
-                                                                                        Wed:
-                                                                                    </b>
+                                                                                <label style="font-weight: 500;">
+                                                                                    Wed:
                                                                                 </label>
                                                                             </div>
 
@@ -1951,10 +1963,8 @@
                                                                         <div class="col-md-12 d-flex"
                                                                             style="margin-left: 20%;">
                                                                             <div class="col-md-1 p-0">
-                                                                                <label>
-                                                                                    <b>
-                                                                                        Thu:
-                                                                                    </b>
+                                                                                <label style="font-weight: 500;">
+                                                                                    Thu:
                                                                                 </label>
                                                                             </div>
                                                                             <div class="col-md-2 p-0">
@@ -1974,10 +1984,8 @@
                                                                         <div class="col-md-12 d-flex"
                                                                             style="margin-left: 20%;">
                                                                             <div class="col-md-1 p-0">
-                                                                                <label>
-                                                                                    <b>
-                                                                                        Fri:
-                                                                                    </b>
+                                                                                <label style="font-weight: 500;">
+                                                                                    Fri:
                                                                                 </label>
                                                                             </div>
 
@@ -2001,10 +2009,8 @@
                                                                         <div class="col-md-12 d-flex"
                                                                             style="margin-left: 20%;">
                                                                             <div class="col-md-1 p-0">
-                                                                                <label>
-                                                                                    <b>
-                                                                                        Sat:
-                                                                                    </b>
+                                                                                <label style="font-weight: 500;">
+                                                                                    Sat:
                                                                                 </label>
                                                                             </div>
 
@@ -2028,10 +2034,8 @@
                                                                         <div class="col-md-12 d-flex"
                                                                             style="margin-left: 20%;">
                                                                             <div class="col-md-1 p-0">
-                                                                                <label>
-                                                                                    <b>
-                                                                                        Sun:
-                                                                                    </b>
+                                                                                <label style="font-weight: 500;">
+                                                                                    Sun:
                                                                                 </label>
                                                                             </div>
 
@@ -2067,7 +2071,9 @@
                                                 <div class="row d-flex">
                                                     <div class="col-md-4 p-0">
                                                         <div class="col">
-                                                            <b>Website URL</b>:
+                                                            <label style="font-weight:500">
+                                                                Website URL:
+                                                            </label>
                                                             <a href="{{this.secondFormGroup.controls['WebsiteUrl'].value}}"
                                                                 target="_blank">
                                                                 {{this.secondFormGroup.controls['WebsiteUrl'].value}}
@@ -2075,8 +2081,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="col" style="display:ruby">
-                                                            <b>Facebook URL</b>:
+                                                        <div class="col">
+                                                            <label style="font-weight:500">
+                                                                Facebook URL:
+                                                            </label>
                                                             <a href="{{this.secondFormGroup.controls['FacebookUrl'].value}}"
                                                                 target="_blank">
                                                                 {{this.secondFormGroup.controls['FacebookUrl'].value}}
@@ -2085,7 +2093,9 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="col">
-                                                            <b>Twitter URL</b>:
+                                                            <label style="font-weight:500">
+                                                                Twitter URL:
+                                                            </label>
                                                             <a href="{{this.secondFormGroup.controls['TwitterUrl'].value}}"
                                                                 target="_blank">
                                                                 {{this.secondFormGroup.controls['TwitterUrl'].value}}
@@ -2094,7 +2104,9 @@
                                                     </div>
                                                     <div class="col-md-4 p-0">
                                                         <div class="col">
-                                                            <b>Instagram URL</b>:
+                                                            <label style="font-weight:500">
+                                                                Instagram URL:
+                                                            </label>
                                                             <a href="{{this.secondFormGroup.controls['InstagramUrl'].value}}"
                                                                 target="_blank">
                                                                 {{this.secondFormGroup.controls['InstagramUrl'].value}}
@@ -2103,7 +2115,9 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="col">
-                                                            <b>Yelp URL</b>:
+                                                            <label style="font-weight:500">
+                                                                Yelp URL:
+                                                            </label>
                                                             <a href="{{this.secondFormGroup.controls['YelpUrl'].value}}"
                                                                 target="_blank">
                                                                 {{this.secondFormGroup.controls['YelpUrl'].value}}
@@ -2112,7 +2126,9 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="col">
-                                                            <b>Google URL</b>:
+                                                            <label style="font-weight:500">
+                                                                Google URL:
+                                                            </label>
                                                             <a href="{{this.secondFormGroup.controls['GoogleUrl'].value}}"
                                                                 target="_blank">
                                                                 {{this.secondFormGroup.controls['GoogleUrl'].value}}
@@ -2144,10 +2160,10 @@
                                             <div class="col-md-3">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <label>
-                                                            <b>Business Name :</b>
-                                                            {{firstFormGroup.controls['BusinessgroupName'].value}}
+                                                        <label style="font-weight: 500;">
+                                                            Business Name :
                                                         </label>
+                                                        {{firstFormGroup.controls['BusinessgroupName'].value}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -2162,13 +2178,13 @@
                                             <div class="col-md-3">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <label>
-                                                            <b>Payment Schedule :</b>
-                                                            {{thirdFormGroup.controls['paymentSchedule'].value == 1 ?
-                                                            "Monthly":
-                                                            (thirdFormGroup.controls['paymentSchedule'].value == 2 ?
-                                                            "Yearly" : "")}}
+                                                        <label style="font-weight: 500;">
+                                                            Payment Schedule :
                                                         </label>
+                                                        {{thirdFormGroup.controls['paymentSchedule'].value == 1 ?
+                                                        "Monthly":
+                                                        (thirdFormGroup.controls['paymentSchedule'].value == 2 ?
+                                                        "Yearly" : "")}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -2177,15 +2193,15 @@
                                             <div class="col-md-3">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <label>
-                                                            <b>Payment Type :</b>
-                                                            {{thirdFormGroup.controls['selectedOption'].value == 1 ?
-                                                            "Debit Card" :
-                                                            thirdFormGroup.controls['selectedOption'].value == 2 ?
-                                                            "Credit Card" :
-                                                            (thirdFormGroup.controls['selectedOption'].value == 3 ?
-                                                            "ACH" : "")}}
+                                                        <label style="font-weight: 500;">
+                                                            Payment Type :
                                                         </label>
+                                                        {{thirdFormGroup.controls['selectedOption'].value == 1 ?
+                                                        "Debit Card" :
+                                                        thirdFormGroup.controls['selectedOption'].value == 2 ?
+                                                        "Credit Card" :
+                                                        (thirdFormGroup.controls['selectedOption'].value == 3 ?
+                                                        "ACH" : "")}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -2195,31 +2211,19 @@
                                             *ngIf="thirdFormGroup.controls['selectedOption'].value === '1'">
                                             <div class="col-md-3">
                                                 <div class="col">
-                                                    <label>
-                                                        Card Number:
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="col">
-                                                    <label>
+                                                    <label style="font-weight: 500;">
                                                         Card Holder Name:
                                                     </label>
+                                                    {{thirdFormGroup.controls['CardHolderName'].value}}
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="col">
-                                                    <label>
-                                                        Expiry Month/Year:
+                                                    <label style="font-weight: 500;">
+                                                        Make Default:
                                                     </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="col">
-                                                    <label>
-                                                        Make Default: {{thirdFormGroup.controls['ChkMakeDefault'].value
-                                                        == true ? "Yes" : "No"}}
-                                                    </label>
+                                                    {{thirdFormGroup.controls['ChkMakeDefault'].value
+                                                    == true ? "Yes" : "No"}}
                                                 </div>
                                             </div>
                                         </div>
@@ -2227,31 +2231,19 @@
                                             *ngIf="thirdFormGroup.controls['selectedOption'].value === '2'">
                                             <div class="col-md-3">
                                                 <div class="col">
-                                                    <label>
-                                                        Card Number:
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="col">
-                                                    <label>
+                                                    <label style="font-weight: 500;">
                                                         Card Holder Name:
                                                     </label>
+                                                    {{thirdFormGroup.controls['CardHolderName'].value}}
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="col">
-                                                    <label>
-                                                        Expiry Month/Year:
+                                                    <label style="font-weight: 500;">
+                                                        Make Default:
                                                     </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="col">
-                                                    <label>
-                                                        Make Default: {{thirdFormGroup.controls['ChkMakeDefault'].value
-                                                        == true ? "Yes" : "No"}}
-                                                    </label>
+                                                    {{thirdFormGroup.controls['ChkMakeDefault'].value
+                                                    == true ? "Yes" : "No"}}
                                                 </div>
                                             </div>
                                         </div>
@@ -2259,31 +2251,19 @@
                                             *ngIf="thirdFormGroup.controls['selectedOption'].value === '3'">
                                             <div class="col-md-3">
                                                 <div class="col">
-                                                    <label>
-                                                        Account Number:
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="col">
-                                                    <label>
-                                                        Routing Number:
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="col">
-                                                    <label>
+                                                    <label style="font-weight: 500;">
                                                         Account Holder Name:
                                                     </label>
+                                                    {{thirdFormGroup.controls['CardHolderName'].value}}
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="col">
-                                                    <label>
-                                                        Make Default: {{thirdFormGroup.controls['ChkMakeDefault'].value
-                                                        == true ? "Yes" : "No"}}
+                                                    <label style="font-weight: 500;">
+                                                        Make Default:
                                                     </label>
+                                                    {{thirdFormGroup.controls['ChkMakeDefault'].value
+                                                    == true ? "Yes" : "No"}}
                                                 </div>
                                             </div>
                                         </div>
@@ -2292,11 +2272,11 @@
                                             <div class="col-md-3">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <label>
-                                                            <b>Transaction Date :</b>
-                                                            {{thirdFormGroup.controls['GoLiveDate'].value |
-                                                            date:'dd-MM-yyyy'}}
+                                                        <label style="font-weight: 500;">
+                                                            Transaction Date :
                                                         </label>
+                                                        {{thirdFormGroup.controls['GoLiveDate'].value |
+                                                        date:'dd-MM-yyyy'}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -2320,10 +2300,10 @@
                                     <div class="accordion-body">
                                         <div class="row" style="margin-bottom: 1%;">
                                             <div class="col-md-6">
-                                                <label>
-                                                    <b>Business Location Name :</b>
-                                                    {{secondFormGroup.controls['BusinessLocationName'].value}}
+                                                <label style="font-weight: 500;">
+                                                    Business Location Name :
                                                 </label>
+                                                {{secondFormGroup.controls['BusinessLocationName'].value}}
                                             </div>
                                             <div class="col-md-6">
                                                 <button class="editClassSummary" (click)="goToSteps(4, 'sources')">
@@ -2334,21 +2314,25 @@
                                         </div>
                                         <div class="row" style="margin-bottom: 1%;">
                                             <h4> Customer Tablet </h4>
-                                            <label>
-                                                Tablet Brand
+                                            <label style="font-weight: 500;">
+                                                Tablet Brand:
                                             </label>
-                                            <label>
-                                                Tablet Model
+                                            {{fourthFormGroup.controls['CustTabletBrand'].value}}
+                                            <label style="font-weight: 500;">
+                                                Tablet Model:
                                             </label>
+                                            {{fourthFormGroup.controls['CustTabletModel'].value}}
                                         </div>
                                         <div class="row" style="margin-bottom: 1%;">
                                             <h4> Store Tablet </h4>
-                                            <label>
-                                                Tablet Brand
+                                            <label style="font-weight: 500;">
+                                                Tablet Brand:
                                             </label>
-                                            <label>
-                                                Tablet Model
+                                            {{fourthFormGroup.controls['StoreTabletBrand'].value}}
+                                            <label style="font-weight: 500;">
+                                                Tablet Model:
                                             </label>
+                                            {{fourthFormGroup.controls['StoreTabletModel'].value}}
                                         </div>
                                     </div>
                                 </div>
@@ -2366,6 +2350,7 @@
 
                 </div>
             </mat-step>
+
         </mat-stepper>
     </div>
 </div>
