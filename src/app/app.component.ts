@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,5 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'Panel';
-  @HostListener('window:beforeunload', ['$event'])
-  beforeUnloadHandler(event: Event) {
-    if (event.currentTarget) {
-      localStorage.clear();
-    }
-  }
+  
 }
